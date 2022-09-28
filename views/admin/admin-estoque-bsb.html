@@ -1,0 +1,209 @@
+<div class="content">
+  <div class="content-inside">
+    <div class="my-4">
+      <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a style="background-color: #2E9AFE;color: white" class="nav-link active" id="home-tab" data-toggle="tab"
+            role="tab" aria-controls="home" aria-selected="false"><b>Estoque - Brasília - {function="totalItens()"} itens
+               </b></a>
+
+        </li>
+
+      </ul>
+
+            
+
+        <a style="width: 30%;" href="/admin/registrar-equipamentos-bsb"class="btn btn-primary btn-sm"><i class="fa fa-plus-circle" aria-hidden="true"></i><b> Registrar Equipamento/Acessório</b></a>
+  
+      
+         <a style="width: 15%;" href="/admin/retirada-equipamentos-bsb"class="btn btn-info btn-sm"><b> Verificar Retiradas</b></a>
+         <a style="width: 15%;" href="/admin/entrada-equipamentos-bsb"class="btn btn-success btn-sm"><b> Verificar Entradas</b></a>
+
+         
+      <div class="search" style="float: right">
+        <form action="/admin/estoque-bsb" method="get">
+          <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Digite sua pesquisa...">
+            <span class="input-group-btn">
+              <button class="btn btn" style="background-color: #2E9AFE;color: white" type="submit" id="search-btn"><i
+                  class="fa fa-search" style="font-size:13px;"> PESQUISAR</i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div><br><br>
+
+        {if="$profileMsg != ''"}
+      <div class="alert alert-success">
+        <b>{$profileMsg}</b>
+      </div>
+      {/if}
+
+
+      <div class="table-responsive">
+        <table class=" table table-hover table-sm  table-bordered">
+          <thead class="table table-dark">
+            <tr style="font-size: 16px; font-weight: bold; ">
+
+
+
+
+              <th>
+                <center>Categoria<b>
+              </th>
+               <th>
+                <center>Descrição<b>
+              </th>
+              <th>
+                <center>Quantidade<b>
+              </th>
+
+              <th>
+                <center>Último Hostname<b>
+              </th>
+              <th>
+                <center>Fabricante<b>
+              </th>
+
+              <th>
+                <center>Modelo
+              </th>
+
+              <th>
+                <center>Nº Série
+              </th>
+              <th>
+                <center>Patrimônio
+              </th>
+                <th>
+                <center>Tamanho da Tela
+              </th>
+              <th>
+                <center>Condição
+            
+               <th>
+                <center>Validação
+              </th>
+
+              <th>
+                <center>Local
+              </th>
+                <th>
+                <center>Imagem
+              </th>
+              <th>
+                <center>Alterar
+              </th>
+               <th>
+                <center>Excluir
+              </th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            {loop="$estoque"}
+            <tr style="font-size: 15px;font-weight: normal;">
+
+              <td>
+                <center>{$value.categoria}
+              </td>
+              <td>
+                <center>{$value.descricao}
+              </td>
+
+              <td>
+                <center>{if="$value.quantidade <= 0"} <b style="color: red">{$value.quantidade}</b>
+                  {else}{$value.quantidade}{/if}
+              </td>
+              <td>
+                <center>{$value.hostname}
+              </td>
+              <td>
+                <center>{$value.fabricante}
+              </td>
+
+              <td>
+                <center>{$value.modelo}
+              </td>
+              <td>
+                <center>{$value.serie}
+              </td>
+
+              <td>
+                <center> {$value.patrimonio}
+
+              </td>
+                  <td>
+                <center> {$value.tela}
+
+              <td>
+                <center>{$value.condicao}
+                 
+              </td>
+              
+               <td>
+                <center>{function="formatDate($value.validacao)"}
+                 
+              </td>
+                <td>
+                <center>{$value.lugar}
+                 
+              </td>
+               <td>
+                <center>{$value.imagem}
+                 
+              </td>
+
+               <td>
+                <center>
+                 
+                  <a style="width: 100%;" href="/admin/equipamento/editar-bsb/{$value.id_equipamento}"class="btn btn-success btn-sm"><b>Alterar</b></a>
+                               
+              </td>
+
+                <td>
+                <center><a style="width: 100%;" href="/admin/equipamentos/delete/{$value.id_equipamento}"
+                    onclick="return confirm('Deseja realmente excluir o equipamento {$value.descricao} {$value.fabricante} {$value.modelo} {$value.serie} {$value.patrimonio}?')"
+                    class="btn btn-danger btn-sm"><b> Excluir</b></a>
+              </td>
+
+
+            </tr>
+
+            {/loop}
+
+          </tbody>
+
+        </table><br>
+
+      </div>
+
+
+
+      <center>
+        <div class="box-footer clearfix">
+          <ul class="pagination">
+            {loop="$pages"}
+            {if="$pages == $value.link"}
+            <li> <a class="active" href="{$value.link}">{$value.page}</a></li>
+            {else}
+            <li><a href="{$value.link}">{$value.page}</a></li>
+            {/if}
+            {/loop}
+        </div>
+      </center>
+
+  
+      <br><br><a href="javascript:history.back()" class="btn btn-info btn-xs"><i class="fas fa-chevron-circle-left"></i><b>
+          Voltar</b></a>
+
+
+      <hr class="my-4" />
+
+    </div>
+
+
+  </div>
+
+</div>

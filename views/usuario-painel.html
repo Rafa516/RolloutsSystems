@@ -1,0 +1,578 @@
+<div class="content">
+    <div class="content-inside">
+        <div class="my-4">
+            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a style="background-color:#2E9AFE;color: white" class="nav-link active" id="home-tab"
+                        data-toggle="tab" role="tab" aria-controls="home" aria-selected="false"><b>Painel de
+                        Dados</b></a>
+                </li>
+            </ul>
+            <center><img src="../res/user/img/logo.png" class="logo" alt=""></center>
+
+ <p style="font-size: 20px;color: #585858;" class="small mb-1"><b>TODOS LOCAIS</b></p><hr>
+                <center>
+                    <!--Widget Start-->
+                  
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                    <h3>
+                                        <center><span class="count"><b>Rollouts Cadastrados</b></span></center>
+                                    </h3>
+                                    <br>
+                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    {if="totalrollouts() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalRollouts() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalRollouts()"} Rollout</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalRollouts()"} Rollouts</p>
+                                    </center>
+
+                                    {/if}
+
+                            </div>
+
+                      
+                  
+                    <!--Widget End-->
+
+                      <!--Widget Start-->
+                  
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Rollouts Finalizados</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                        {if="totalrolloutsFinalizado() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalrolloutsFinalizado() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalrolloutsFinalizado()"} Rollout</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalrolloutsFinalizado()"} Rollouts</p>
+                                    </center>
+
+                                    {/if}
+                                  
+                    
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                       <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Rollouts Pendentes</b></span></center>
+                                    </h3>
+                                    <br>
+                                 
+                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                           {if="totalrolloutsPendente() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalrolloutsPendente() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalrolloutsPendente()"} Rollout</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalrolloutsPendente()"} Rollouts</p>
+                                    </center>
+
+                                    {/if}
+                                  
+                        
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                    <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos Cadastrados</b></span></center>
+                                    </h3>
+                                    <br>
+
+                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                
+                                    {if="totalTermos() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalTermos() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermos()"} Termo</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermos()"} Termos</p>
+                                    </center>
+
+                                    {/if}
+
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+
+                    <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos de Entregas</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                  {if="totalTermosEntrega() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosEntrega() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosEntrega()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosEntrega()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+
+                                   
+
+                       
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                       <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos de Devolução</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-reply" aria-hidden="true"></i>
+                                       {if="totalTermosDevolucao() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosDevolucao() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosDevolucao()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosDevolucao()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+                                
+                                   
+
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                      <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos Pendentes</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                     {if="totalTermosPendente() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosPendente() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosPendente()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosPendente()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+                                
+                                   
+
+                         
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                       <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos Finalizados</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                       {if="totalTermosFinalizado() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosFinalizado() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosFinalizado()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosFinalizado()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+                                
+                                   
+
+                          
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+
+         <!---------------------------------------------------------------BRASÍLIA--------------------------------------------------------------------->         
+            {if="$usuario.localidade == 'Brasília'"}
+                <hr class="my-4" />
+
+                </center><p style="font-size: 20px;color: #585858;" class="small mb-1"><b>BRASÍLIA</b></p><hr>
+                <center>
+                    <!--Widget Start-->
+                  
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                    <h3>
+                                        <center><span class="count"><b>Rollouts Cadastrados</b></span></center>
+                                    </h3>
+                                    <br>
+                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    {if="totalrolloutsBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalRolloutsBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalRolloutsBsb()"} Rollout</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalRolloutsBsb()"} Rollouts</p>
+                                    </center>
+
+                                    {/if}
+
+                            </div>
+
+                      
+                  
+                    <!--Widget End-->
+
+                      <!--Widget Start-->
+                  
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Rollouts Finalizados</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                        {if="totalRolloutsFinalizadoBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalRolloutsFinalizadoBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalRolloutsFinalizadoBsb()"} Rollout</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalRolloutsFinalizadoBsb()"} Rollouts</p>
+                                    </center>
+
+                                    {/if}
+                                  
+                    
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                       <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Rollouts Pendentes</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                   
+                                           {if="totalrolloutsPendenteBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalrolloutsPendenteBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalrolloutsPendenteBsb()"} Rollout</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalrolloutsPendenteBsb()"} Rollouts</p>
+                                    </center>
+
+                                    {/if}
+                                  
+                        
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                    <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos Cadastrados</b></span></center>
+                                    </h3>
+                                    <br>
+
+                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                
+                                    {if="totalTermosBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum </p>
+                                    </center>
+
+                                    {elseif="totalTermosBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosBsb()"} Termo</p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosBsb()"} Termos</p>
+                                    </center>
+
+                                    {/if}
+
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+
+                    <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos de Entregas</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                  {if="totalTermosEntregaBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosEntregaBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosEntregaBsb()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosEntregaBsb()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+
+                                   
+
+                       
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                       <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos de Devolução</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-reply" aria-hidden="true"></i>
+                                       {if="totalTermosDevolucaoBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosDevolucaoBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosDevolucaoBsb()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosDevolucaoBsb()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+                                
+                                   
+
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                      <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos Pendentes</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                     {if="totalTermosPendenteBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosPendenteBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosPendenteBsb()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosPendenteBsb()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+                                
+                                   
+
+                         
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                       <!--Widget Start-->
+                   
+                        <div class="card-body color" style="background-color:#22242A">
+                          
+                                <h3>
+                                    <h3>
+                                        <center><span class="count"><b>Termos Finalizados</b></span></center>
+                                    </h3>
+                                    <br>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                       {if="totalTermosFinalizadoBsb() == 0"}
+                                    <center>
+                                        <p style="font-size: 20px;">Nenhum Registrado</p>
+                                    </center>
+
+                                    {elseif="totalTermosFinalizadoBsb() == 1"}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosFinalizadoBsb()"} Termo </p>
+                                    </center>
+
+                                    {else}
+                                    <center>
+                                        <p style="font-size: 20px;">{function="totalTermosFinalizadoBsb()"} Termos </p>
+                                    </center>
+
+                                    {/if}
+                                
+                                   
+
+                          
+
+                        </div>
+                   
+                    <!--Widget End-->
+
+                    {/if}
+
+
+                 
+
+                <hr class="my-4" />
+
+
+        </div>
+    </div>
+</div>

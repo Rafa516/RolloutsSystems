@@ -1,0 +1,172 @@
+<div class="content">
+  <div class="content-inside">
+    <div class="my-4">
+      <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a style="background-color: #2E9AFE;color: white" class="nav-link active" id="home-tab" data-toggle="tab"
+            role="tab" aria-controls="home" aria-selected="false"><b>Meus Rollouts - Rio de Janeiro - 
+              {if="totalRolloutsIDRj($usuario.id_usuario) == 0"}
+              Nenhum Registrado
+              {elseif="totalRolloutsIDRj($usuario.id_usuario) == 1"}
+              {function="totalRolloutsIDRj($usuario.id_usuario)"} Registrado
+              {else}
+              {function="totalRolloutsIDRj($usuario.id_usuario)"} Registrados
+              {/if} </b></a>
+
+        </li>
+
+      </ul>
+
+
+
+
+     
+
+      {if="totalRolloutsIDRj($usuario.id_usuario) != 0"}
+
+       <a style="width: 15%;" href="/usuario/todos-rollouts-rj"class="btn btn-primary btn-sm"><i class="fas fa-tasks"></i><b> Todos Rollouts</b></a>
+
+      <div class="search" style="float: right">
+        <form action="/usuario/meus-rollouts-rj" method="get">
+          <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Digite sua pesquisa...">
+            <span class="input-group-btn">
+              <button class="btn btn" style="background-color: #2E9AFE;color: white" type="submit" id="search-btn"><i
+                  class="fa fa-search" style="font-size:13px;"> PESQUISAR</i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div><br><br>
+
+       {if="$profileMsg != ''"}
+      <div class="alert alert-success">
+        <b>{$profileMsg}</b>
+      </div>
+      {/if}
+
+      <div class="table-responsive">
+        <table class="table table-hover table-sm  table-bordered">
+          <thead class="table table-dark">
+            <tr style="font-size: 16px; font-weight: bold; ">
+
+
+              <th>
+                <center>Colaborador(a)<b>
+              </th>
+              <th>
+                <center>Entrega
+              </th>
+              <th>
+                <center>Anexo(s)
+              </th>
+              <th>
+                <center>Situação
+              </th>
+              <th>
+                <center>Visualizar
+              </th>
+              <th>
+                <center>Alterar
+              </th>
+              <th>
+                <center>Excluir
+              </th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            {loop="$rollouts"}
+            <tr style="font-size: 15px;font-weight: normal;">
+
+              <td>
+                <center>{$value.nome}
+              </td>
+              <td>
+                <center>{function="formatDate($value.dt_data_rollout)"}
+              </td>
+
+
+              <td>
+                <center> <a style="width: 100%;" href="/usuario/meus-rollouts/arquivos-rj/{$value.id_rollout}"
+                    style="width: 100px;" class="btn btn-warning btn-sm">
+                    <i class="far fa-file-alt"></i>
+                    {if="numArquivos($value.id_rollout) == 1"}
+                    <b>{function="numArquivos($value.id_rollout)"} Arquivo</b></a>
+                  {else}
+                  <b>{function="numArquivos($value.id_rollout)"} Arquivos</b></a>
+                  {/if}
+              </td>
+
+
+              {if="$value.situacao == '' OR $value.situacao == 'Pendente' "}
+
+              <td>
+                <center>
+                  <a style="width: 100%;" href="/usuario/rollout-situacao-rj/{$value.id_rollout}"
+                    onclick="return confirm('Deseja alterar a situação do rollout do(a) {$value.nome}?')" type="button"
+                    class=" btn btn-outline-danger btn-sm "><i class="fas fa-exclamation-triangle"></i> Pendente</a>
+              </td>
+
+              {else}
+              <td>
+                <center><a style="width: 100%;" style="width: 80px;"
+                    href="/usuario/rollout-situacao-rj/{$value.id_rollout}"
+                    onclick="return confirm('Deseja alterar a situação do rollout do(a) {$value.nome}?')" type="button"
+                    class="btn btn-outline-success btn-sm "><i class="fas fa-check-square"></i> Finalizado</a>
+              </td>
+
+              </td>
+              {/if}
+              <td>
+                <center> <a style="width: 100%;" href="/usuario/rollout-visualizar-rj/{$value.id_rollout}"
+                    class="btn btn-primary btn-sm"><i class="fas fa-eye"></i><b> Verificar</b></a>
+              <td>
+                <center> <a style="width: 100%;" href="/usuario/rollout/editar-rj/{$value.id_rollout}"
+                    class="btn btn-success btn-sm"><i class="fas fa-pen"></i><b> Alterar</b></a></center>
+              </td>
+              <td>
+                <center><a style="width: 100%;" href="/usuario/rollouts-rj/delete/{$value.id_rollout}"
+                    onclick="return confirm('Deseja realmente excluir o Rollout do(a) {$value.nome}?')"
+                    class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i><b> Excluir</b></a>
+              </td>
+
+            </tr>
+
+            {/loop}
+
+          </tbody>
+
+        </table><br>
+
+      </div>
+
+
+
+      <center>
+        <div class="box-footer clearfix">
+          <ul class="pagination">
+            {loop="$pages"}
+            {if="$pages == $value.link"}
+            <li> <a class="active" href="{$value.link}">{$value.page}</a></li>
+            {else}
+            <li><a href="{$value.link}">{$value.page}</a></li>
+            {/if}
+            {/loop}
+        </div>
+      </center>
+
+      {/if}
+      <a href="javascript:history.back()" class="btn btn-info btn-xs"><i class="fas fa-chevron-circle-left"></i><b>
+          Voltar</b></a>
+
+
+      <hr class="my-4" />
+
+    </div>
+
+
+  </div>
+
+</div>
